@@ -1,0 +1,12 @@
+
+
+0: x
+1: f
+2: f(x=f)
+3: f(x=f(x=f))
+
+SUCC: f(x=n)
+PLUS: m(x=n)
+PLUS: SUCC(f=m)
+MULT: m(f=n)
+MULT: m(f=PLUS(m=0))
