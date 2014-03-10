@@ -1,0 +1,38 @@
+
+# tautologies. discarded?
+first: first
+second: second
+pair: pair
+
+# tautologies. discarded?
+first: pair(pair=first)
+ -> first
+second: pair(pair=second)
+ -> second
+
+x:  pair(first=1, second=2)
+
+x_first: first(pair=x)
+ -> first(pair=pair(first=1, second=2))
+ -> (pair(pair=first))(pair=pair(first=1, second=2))
+ -> (pair(first=1, second=2))(pair=first)
+ -> first(first=1, second=2)
+ -> 1
+
+
+
+
+ -> (pair(f=first))(pair=x)
+ -> x(f=first)
+ -> (f(first=1, second=2))(f=first)
+ -> first(first=1, second=2)
+ -> 1
+
+
+x_second: second(pair=x)
+
+# assertions.
+x_first: 1
+x_second: 2
+
+
